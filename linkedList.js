@@ -12,7 +12,20 @@ class LinkedList {
   }
 
   append(element) {
+    let node = new Node(element);
+    let current = null;
 
+    if (this.head === null) {
+      this.head = node;
+    } else {
+      current = this.head;
+      while(current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+
+    this.length++;
   }
 
   insert(position, element) {
@@ -49,5 +62,8 @@ class LinkedList {
 
 
 let a = new LinkedList();
+a.append(5);
+a.append(7);
+console.log(a);
 console.log(a.isEmpty());
 console.log(a.size());
