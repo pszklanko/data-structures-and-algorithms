@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 class Node {
   constructor(element) {
     this.element = element;
@@ -24,7 +26,6 @@ class LinkedList {
       }
       current.next = node;
     }
-
     this.length++;
   }
 
@@ -39,20 +40,15 @@ class LinkedList {
         node.next = current;
         this.head = node;
       } else {
-
         while(index++ < position) {
           previous = current;
           current = current.next;
         }
-
         previous.next = node;
         node.next = current;
-
       }
-
       this.length++;
       return true;
-
     } else {
       return false;
     }
@@ -75,7 +71,6 @@ class LinkedList {
       }
       this.length--;
       return current.element;
-
     } else {
       return null;
     }
@@ -89,6 +84,7 @@ class LinkedList {
   indexOf(element) {
     let current = this.head;
     let index = 0;
+
     while(current) {
       if(element === current.element) return index;
       index++;
@@ -100,6 +96,7 @@ class LinkedList {
   isEmpty() {
     return this.length === 0;
   }
+
   size() {
     return this.length;
   }
