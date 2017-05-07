@@ -84,10 +84,19 @@ class LinkedList {
   }
 
   remove(element) {
-
+    let position = this.indexOf(element);
+    return this.removeAt(position);
   }
 
   indexOf(element) {
+    let current = this.head;
+    let index = 0;
+    while(current) {
+      if(element === current.element) return index;
+      index++;
+      current = current.next;
+    }
+    return -1;
 
   }
 
@@ -99,7 +108,14 @@ class LinkedList {
   }
 
   toString() {
+    let current = this.head;
+    let elements = [];
 
+    while(current) {
+      elements.push(current.element);
+      current = current.next;
+    }
+    return elements.join();
   }
 
   print() {
@@ -114,6 +130,6 @@ a.append(7);
 a.append(11);
 a.append(3);
 
-console.log(a.size());
-console.log(a.insert(4,-6));
-console.log(a.size());
+
+console.log(a.remove(5));
+console.log(a.toString());
