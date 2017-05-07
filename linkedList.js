@@ -115,18 +115,11 @@ class LinkedList {
     return elements.join();
   }
 
+  getHead() {
+    return this.head;
+  }
+
   print() {
     console.log(this.toString());
   }
 }
-
-
-let a = new LinkedList();
-a.append(5);
-a.append(7);
-a.append(11);
-a.append(3);
-
-
-console.log(a.remove(5));
-a.print();
