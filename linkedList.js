@@ -56,7 +56,6 @@ class LinkedList {
     } else {
       return false;
     }
-
   }
 
   removeAt(position) {
@@ -80,7 +79,6 @@ class LinkedList {
     } else {
       return null;
     }
-
   }
 
   remove(element) {
@@ -97,7 +95,6 @@ class LinkedList {
       current = current.next;
     }
     return -1;
-
   }
 
   isEmpty() {
@@ -119,7 +116,7 @@ class LinkedList {
   }
 
   print() {
-
+    console.log(this.toString());
   }
 }
 
@@ -132,4 +129,4 @@ a.append(3);
 
 
 console.log(a.remove(5));
-console.log(a.toString());
+a.print();
