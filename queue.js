@@ -62,9 +62,3 @@ let Queue = (function () {
 })();
 
 let q = new Queue()
-q.enqueue("John");
-q.enqueue("Bob");
-q.enqueue("Alice");
-q.print();
-q.dequeue()
-q.print()
