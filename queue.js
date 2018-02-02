@@ -1,4 +1,4 @@
-let queue = (function () {
+let Queue = (function () {
     const items = new WeakMap();
 
     class Queue {
@@ -31,4 +31,7 @@ let queue = (function () {
             console.log(q.toString());
         }
     }
-})
+    return Queue;
+})();
+
+let q = new Queue()
