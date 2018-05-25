@@ -38,8 +38,20 @@ let DoublyLinkedList = (function () {
                 let index = 0;
 
                 if (position === 0) {
-                    node.next = current;
-                    this.head = node;
+                    if(!this.head) {
+                        this.head = node;
+                        this.tail = node;
+                    } else {
+                        node.next = current;
+                        current.prev = node;
+                        this.head = node;
+                    }
+
+                } else if(position === length) {
+                    current = tail;
+                    current.next = node;
+                    node.prev = current;
+                    tail = node;
                 } else {
                     while (index++ < position) {
                         previous = current;
@@ -47,6 +59,8 @@ let DoublyLinkedList = (function () {
                     }
                     previous.next = node;
                     node.next = current;
+                    current.prev = node;
+                    node.prev = previous;
                 }
                 this.length++;
                 return true;
