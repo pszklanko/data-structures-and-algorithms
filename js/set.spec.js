@@ -73,4 +73,13 @@ describe('Base Set tests', () => {
         expect(difference.values()).toContain(3,4);
         expect(difference.size()).toEqual(2);
     });
+    it('should be able to check if one is subset of other', () => {
+        const setB = new Set();
+        this.set.add(3);
+        this.set.add(4);
+        setB.add(3);
+        setB.add(4);
+        setB.add(7);
+        expect(this.set.isSubsetOf(setB)).toEqual(true);
+    })
 });

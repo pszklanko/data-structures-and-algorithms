@@ -65,7 +65,18 @@ class Set {
         return diffSet;
     }
     isSubsetOf(otherSet) {
-
+        if(this.size() > otherSet.size()) {
+            return false;
+        }
+        let isSubset = true;
+        this.values().every(element => {
+            if(!otherSet.has(element)) {
+                isSubset = false;
+                return false;
+            }
+            return true;
+        })
+        return isSubset;
     }
 }
 
